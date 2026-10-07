@@ -240,7 +240,7 @@ L1_start · L1_end · L1_peak · dev · ev · events · yearly · rebirth
 ```bibtex
 @misc{virtualcity2026,
   title  = {A Behavior-Level Virtual City Sandbox: Data Release},
-  author = {TODO: 由用户拍板（作者/机构）},
+  author = {sevnwu},
   year   = {2026},
   note   = {Engine fingerprint: 0269A820E07E0423; scale: TODO; years: TODO;
             seeds: TODO},

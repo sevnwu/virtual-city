@@ -5,7 +5,7 @@
 · 平台：Hacker News · 用 "Show HN:" 前缀
 · 时机：美东 08:00–10:00（周二~周四最好）
 · ⚠️ 发完【不要】自己顶帖刷评论；有人问就答
-· ✅ Repo URL filled · ⚠️ only the **contact** field remains (see `README.md`)
+· ✅ Repo URL filled · ✅ contact filled (`wudonghai@126.com`, see `README.md`)
 · ⚠️ 若被质疑"这不就是 ABM 吗" ⇒ 用 FAQ_REBUTTALS.md 第 1 条
 ```
 

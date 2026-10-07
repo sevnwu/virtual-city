@@ -239,10 +239,13 @@
    · 演示地址：https://www.faceabc.com/city/index.html   ← ✅ 实测 HTTP 200
    · 许可：文档/样例 = CC BY 4.0 · 引擎/完整数据 = 保留所有权利
 
-⚠️ TODO（由作者填）：
-   · 联系方式：
-   · 是否接受合作 / 数据申请：
+✅ 联系方式（已定）：
+   · 邮箱：**wudonghai@126.com**
+   · 是否接受合作 / 数据申请：**是** —— 欢迎直接发邮件
 ```
+
+> ⭐ **想用完整数据、想做定制分析、或想谈商业授权** ⇒ **直接发邮件到 `wudonghai@126.com`**，
+> 说清**用途**与**规模**即可。**学术与教学用途优先。**
 
 **当前状态**：✅ **文档与样例数据【已可自由使用】**（CC BY 4.0 · 署名即可）。
 ⚠️ **完整数据与商业授权【尚未开放】** —— 定价与署名仍在定（见 `SAMPLE_PACKAGE/LICENSE_TODO.md`）。
@@ -254,7 +257,7 @@
 ```bibtex
 @misc{virtualcity2026,
   title   = {A Behavioral Virtual City: individual-level counterfactual simulation},
-  author  = {TODO},
+  author  = {sevnwu},
   year    = {2026},
   url     = {https://github.com/sevnwu/virtual-city},
   license = {CC BY 4.0},

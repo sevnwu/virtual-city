@@ -7,7 +7,7 @@
 | **Live demo** | **<https://www.faceabc.com/city/index.html>** — ⚠️ **the demo UI is in Chinese** |
 | **Version history** | <https://www.faceabc.com/city/versions.html> |
 | **Repo** | <https://github.com/sevnwu/virtual-city> |
-| **License** | Docs & sample data: **CC BY 4.0** — cite · reuse · research · teaching · commercial prototyping, attribution only. Engine code & full data: **All rights reserved**. Commercial licensing: `TODO: contact` |
+| **License** | Docs & sample data: **CC BY 4.0** — cite · reuse · research · teaching · commercial prototyping, attribution only. Engine code & full data: **All rights reserved**. Commercial licensing: **wudonghai@126.com** |
 
 ---
 
@@ -214,10 +214,14 @@ by our own new measurements** (see `SHANGHAI_SCALE_BUDGET.md`).
    · Repo:  https://github.com/sevnwu/virtual-city
    · Demo:  https://www.faceabc.com/city/index.html   (⚠️ UI is in Chinese)
 
-⚠️ TODO (for the author):
-   · Contact:
-   · Whether collaboration / data requests are accepted:
+✅ Contact (set):
+   · Email: **wudonghai@126.com**
+   · Collaboration / data requests: **Yes** — just send an email
 ```
+
+> ⭐ **Full data, custom analysis, or commercial licensing** ⇒ **email `wudonghai@126.com`**
+> with a one-line description of **what you want to do** and **at what scale**.
+> **Academic and teaching uses are prioritised.**
 
 **Current status**: ✅ **Docs and sample data are free to use now** (CC BY 4.0 — attribution only).
 ⚠️ **Full data and commercial licensing are not open yet** — pricing and attribution are still being decided
@@ -230,7 +234,7 @@ by our own new measurements** (see `SHANGHAI_SCALE_BUDGET.md`).
 ```bibtex
 @misc{virtualcity2026,
   title   = {A Behavioral Virtual City: individual-level counterfactual simulation},
-  author  = {TODO},
+  author  = {sevnwu},
   year    = {2026},
   url     = {https://github.com/sevnwu/virtual-city},
   license = {CC BY 4.0},

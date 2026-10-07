@@ -5,7 +5,7 @@
 · ⚠️ 每条 ≤ 280 字符（**已按此写好 · 别加字**）
 · ⚠️ 配图最重要：**一张"虚拟城市人口曲线"或"两条轨迹分叉"的图** ⇒ 有图转发量差一个数量级
 · ⚠️ 第 1 条与第 9/10 条是钩子 · 中间是内容
-· ✅ 仓库 URL 已填 · ⚠️ 仅剩【联系方式】待填
+· ✅ 仓库 URL 已填 · ✅ 联系方式已填（`wudonghai@126.com`）
 · ⚠️ 编号以【正文里的】为准（**1/10 … 10/10**）—— 早先的 /8 是旧编号 · 中间几条未改
 ```
 
@@ -113,5 +113,5 @@ The two runs behind my charts are 2,500 → 23,006 over 200 years. A 200-year ho
 
 ## ⚠️ 许可说明（发帖时可放最后一条评论 · 不放正文）
 ```
-Docs & sample data: **CC BY 4.0** (cite · reuse · research · teaching · commercial prototyping — attribution only) · Engine source & full data: **proprietary** · Commercial licensing: <TODO: contact>
+Docs & sample data: **CC BY 4.0** (cite · reuse · research · teaching · commercial prototyping — attribution only) · Engine source & full data: **proprietary** · Commercial licensing: **wudonghai@126.com**
 ```
