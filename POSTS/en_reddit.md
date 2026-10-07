@@ -89,7 +89,7 @@ per-answer confidence): **https://github.com/sevnwu/virtual-city**
 
 Live demo (running right now): https://www.faceabc.com/city/index.html
 ⚠️ **The demo UI is in Chinese** — this post is the English write-up; an English one-pager
-(`README_EN.md`) is in the repo.
+(`README.md`) is in the repo.
 **License**: docs & sample data are **CC BY 4.0** — cite, reuse, research, teaching and
 commercial prototyping, attribution only. The **engine source and full data are proprietary**;
 commercial licensing is available separately.
@@ -111,6 +111,6 @@ would save me a lot of time.
 · ⭐ **评论区最该抢答的两条**：
    ① "isn't this just ABM?" ⇒ **分层承认**（个体层不新）
    ② "how do you validate?" ⇒ **一口咬定"没有系统验证"**
-   ③ ⭐ **新增**："the demo is in Chinese?" ⇒ **承认 + 指向 `README_EN.md`**
+   ③ ⭐ **新增**："the demo is in Chinese?" ⇒ **承认 + 指向 `README.md`**
       ⇒ ⚠️ **别辩解**（"我们正在做英文版"是可以的 · 但别否认现状）✓
 ```

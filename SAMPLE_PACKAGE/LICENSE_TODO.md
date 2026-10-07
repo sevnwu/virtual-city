@@ -99,7 +99,7 @@
 ### ② 署名与引用
 
 ```
-· 作者/机构写谁？✅ **已暂填 `sevnwu`**（`README.md` / `README_EN.md` / `DATA_SPEC.md` 的 BibTeX）
+· 作者/机构写谁？✅ **已暂填 `sevnwu`**（`README_ZH.md` / `README.md` / `DATA_SPEC.md` 的 BibTeX）
   ⇒ ⚠️ **正式发布前建议改成真名或机构名**（学术引用需要可核实的作者名）
 · ✅ **联系方式已定**：`wudonghai@126.com`（**接受合作与数据申请**）
 · 是否要求"使用时必须引用某篇论文"？（若要求 ⇒ 那篇论文必须先写出来）

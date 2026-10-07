@@ -1,258 +1,235 @@
-# 一个行为级虚拟城市（Behavioral Virtual City）
+# A Behavioral Virtual City
 
-> 🌐 **English one-pager** ⇒ [`README_EN.md`](README_EN.md)
+> 🌐 **中文版** ⇒ [`README_ZH.md`](README_ZH.md) · **Version `v1.2.0` (live) · 2026-10-07**
 
 | | |
 |---|---|
-| **版本** | **`v1.2.0`（线上运行版）** · 本仓库离线批次所用引擎另见下方「可复现性」 |
-| **日期** | **2026-10-07** |
-| ⭐ **在线演示** | **<https://www.faceabc.com/city/index.html>** （**实测 HTTP 200** · 城市选择页 · 只读 · 无需登录）<br>⚠️ **演示页界面为中文** · 英文说明见 [`README_EN.md`](README_EN.md) |
-| **版本更新记录** | <https://www.faceabc.com/city/versions.html> |
-| **仓库** | <https://github.com/sevnwu/virtual-city> |
-
-> ### 🎬 关于那个演示地址 —— **请先读这三行**
->
-> 1. ⭐ **它是【活的】**：仿真在服务器上 **7×24 持续运行**（虚拟时间 **600:1**），
->    **打开就能看到当前状态** —— 页面只是客户端，**所有人看到的是同一座城**。
-> 2. ⚠️ **它当前的人数是【54 万+】**，而**本仓库的离线批次是 2,500 人 → 2.3 万人**。
->    **两者不是一回事** —— 理由见下方「三个规模数字」。
-> 3. ✅ **该页面已【允许搜索引擎收录】**（2026-10-07 起：`index,follow`）——
->    **可以从公开帖子里引用它**。
->    ⚠️ **数字更新日期：2026-10-07**（线上一直在跑 ⇒ 引用前建议以 `/api/state` 的最新值为准）。
-
-> ## ⚠️ 请先读这三句（**它们必须先于任何数字被读到**）
->
-> 1. **这是【合成数据】** —— 其中**没有任何一个真实个体** · 没有一条记录来自真人。
-> 2. **这是【模型输出】** —— 它**不是对任何真实城市的测量** · 也**不是统计抽样**。
-> 3. **它【不能用于预测】** —— 我们**没有做过系统性的真实对照**（见下「它现在做不到什么」）。
->
-> 若你把这三句省略掉再引用其中的数字 ⇒ **那你引用的东西就不成立了**。
+| **Live demo** | **<https://www.faceabc.com/city/index.html>** — ⚠️ **the demo UI is in Chinese** |
+| **Version history** | <https://www.faceabc.com/city/versions.html> |
+| **Repo** | <https://github.com/sevnwu/virtual-city> |
+| **License** | Docs & sample data: **CC BY 4.0** — cite · reuse · research · teaching · commercial prototyping, attribution only. Engine code & full data: **All rights reserved**. Commercial licensing: **wudonghai@126.com** |
 
 ---
 
-## 它是什么
+## ⚠️ Read these three sentences first — before any number
 
-**一个跑在服务器上、持续了 1000+ 天的虚拟城市。** 里面有 **50 万+ 个"人"** ——
-每个都有**姓名、性别、出生、家庭、性格（大五人格 O/C/E/A/N）、学历、职业、收入、
-婚恋史、生育史**，以及**一份逐年的"一生轨迹"**。
-
-它**不是**人口统计学意义上的"分年龄组转移矩阵"。它是**行为级**的：
-**每个个体被单独模拟**，政策改变的是个体面对的条件，**人口层面的结果从个体行为中涌现**。
-
-> ### ⚠️ 三个规模数字 —— **别把它们混起来看**
+> 1. **This is synthetic data.** There is **no real individual** in it. Not one record comes from a real person.
+> 2. **This is model output.** It is **not a measurement** of any real city, and **not a statistical sample**.
+> 3. **It must not be used for prediction.** **We have done no systematic validation** against reality
+>    (see *What it cannot do* below).
 >
-> | | 规模 | 时间跨度 | 用途 |
-> |---|---|---|---|
-> | **① 线上这座城** | **54 万+ 人**（实测 **539,742**） | **第 1456 天**（**实时运行中** · 实测 2026-10-07） | 展示"它活着" |
-> | **② 本文档/配图引用的两批** | **2,500 人 → 23,006 人** | **200 年** | 展示"长窗口下的政策对照" |
-> | **③ 实际跑过的最大** | **210,000 人**（短期）；**166,410 人 × 173 年**（带完整逐年历史） | | 规模上限 |
->
-> ⭐ **为什么图上是 2.3 万人而不是 54 万？** ——
-> 因为**耗时 ≈ 人数 × 年数**（实测 **13~14 ms / 人·年**）：
-> **54 万人 × 200 年 ≈ 单臂 9 天**（20 臂 ≈ 183 天）。
-> ⇒ ⭐ **所以"长窗口"和"大规模"目前【不能同时要】** ——
-> **这不是缩水 · 而是一个明确的取舍** ✓
->
-> ⚠️ **引用任何数字前，请先确认它属于上表哪一行。**
-
-> ⭐ **它最独特的地方**：**它跑的是"反事实"（counterfactual）** ——
-> 同一批人 · 同一个随机种子 · **只改一个政策开关** ⇒ **两条轨迹分叉**。
-> **这件事在真实世界里做不到**（你不能拿真人做对照实验）。
+> If you quote a number from this project **without** these three sentences, **what you are quoting does not hold.**
 
 ---
 
-## 它能做什么（**每条都附证据**）
+## What it is
 
-| 能力 | 一句话 | 证据 |
+**A virtual city running continuously on a server for 4 years (1456 days).** It contains **500,000+ simulated
+individuals** — each with a **name, sex, birth, family, Big-Five personality (O/C/E/A/N), education,
+occupation, income, relationship history, fertility history**, and a **year-by-year life trajectory**.
+
+It is **not** an age-structured cohort transition matrix. It is **behavior-level**: **every individual is
+simulated separately**, policy changes the conditions each individual faces, and **population-level
+outcomes emerge from individual behavior**.
+
+> ⭐ **What makes it different: it runs counterfactuals.**
+> Same people · same random seed · **change one policy switch** ⇒ **two trajectories diverge.**
+> **That is the experiment you cannot run on real people.**
+
+### ⚠️ Three different scale numbers — do not conflate them
+
+| | Scale | Horizon | What it is for |
+|---|---|---|---|
+| **① The live city** | **500k+ individuals** | **running in real time** | showing "it is alive" |
+| **② The two runs behind the charts** | **2,500 → 23,006 individuals** | **200 years** | showing policy contrast over a long horizon |
+| **③ Largest actually run** | **210,000** (short); **166,410 × 173 years** (with full history) | | scale ceiling |
+
+> ⭐ **Why does the chart show ~23k and not 500k?**
+> Because **time cost ≈ people × years** (measured **13–14 ms / person-year**):
+> a **500k × 200-year run ≈ 9 days per arm** (20 arms ≈ 183 days).
+> ⇒ **"Long horizon" and "large scale" cannot both be had yet** — this is **an explicit trade-off, not an omission.**
+
+---
+
+## What it can do (**each with a reproducible artifact in the repo**)
+
+| Capability | In one line | Artifact |
 |---|---|---|
-| **政策评估** | 给一个政策、给一个指标，跑 K 个种子，给**带 95% 置信区间的效应** | `GOV_MULTISEED_A2_RESULT.md` |
-| ⭐ **反事实对照** | **同种子 · 只改一个开关** ⇒ 两条轨迹分叉 | `GOV_B_RESULT.md`（三层判定） |
-| **财政可持续性** | 税收 → 预算约束 → 维护 → **折旧** → 重建的**完整回路** | `GOV_DEPRECIATION_REPORT.md` · `GOV_MAINT_DEPREC_LINK_REPORT.md` |
-| **个体一生轨迹** | 逐年的婚/育/职/病/迁徙事件流 | `life500/lives500.jsonl.gz` |
-| **虚拟问卷抽样** | 从虚拟人口中**抽样回答问卷** | `/api/surveySample` |
+| **Policy evaluation** | Given a policy and an indicator, run K seeds ⇒ an effect **with a 95% CI** | `GOV_MULTISEED_A2_RESULT.md` |
+| ⭐ **Counterfactual comparison** | **Same seed · one switch changed** ⇒ trajectories diverge | `GOV_B_RESULT.md` |
+| **Fiscal sustainability** | taxes → budget constraint → maintenance → **depreciation** → rebuild, **a closed loop** | `GOV_DEPRECIATION_REPORT.md` |
+| **Individual life trajectories** | year-by-year marriage/fertility/job/health/migration event stream | `life500/lives500.jsonl.gz` |
+| **Synthetic survey sampling** | sample the synthetic population to answer questionnaires | `/api/surveySample` |
 
-**一个已完成的因果链例子**（这是仓库里最扎实的一条）：
+**One completed causal chain** (the most solid result in the repo):
 
 ```
-「建学校」→ 15~25 岁人群的学历
-   · 10 个种子 · 配对设计
-   · 平均效应 +4.454% · 95% CI [3.624, 5.284] · t = 12.139 · 10/10 同向
-   · 证据：EDU_MULTISEED2_RESULT.md
-   ⚠️ 但这条结论【受 L-1 限制】—— 见下
+"Build schools" → education of the 15–25 cohort
+   · 10 seeds · paired design
+   · mean effect +4.454% · 95% CI [3.624, 5.284] · t = 12.139 · 10/10 seeds same direction
+   · evidence: EDU_MULTISEED2_RESULT.md
+   ⚠️ This result is affected by L-1 (see below).
 ```
 
 ---
 
-## ⚠️ 它现在**做不到**什么（**这一节请务必读完**）
+## ⚠️ What it **cannot** do (**please read this section**)
 
-> **原则：「未声明的简化」比「已知的误差」危险得多。**
-> 以下每一条**都已在代码里定位到行号**，并且**都会限制你能拿它得出的结论**。
+> **Principle: an *undeclared* simplification is far more dangerous than a *known* error.**
+> Every item below is **located to a line number in the code**, and **every one of them limits what you can conclude.**
 
-### 🔴 会**让结论方向变反**的三条（最危险）
+### 🔴 Three that can **flip the sign** of a conclusion
 
-| # | 限制 | 后果 |
+| # | Limitation | Consequence |
 |---|---|---|
-| **L-1** | **学历的年龄结构与真实世界【相反】** —— 模型里"越年轻 ⇒ 学历越低"；模型从**区的全年龄**学历表抽样（第一档 ≈61.6%，主要由老年人贡献） | ⚠ **"学历效应"与"年龄效应"无法分离** ⇒ 任何"学历 → 婚育/收入/就业"的结论**都可能反向** |
-| **L-5** | **口径歧义 6 条**（如：总量型生育指标 `expBirthsY` 的**分母是内生的** ⇒ **越有效的政策让它【下降】**） | ⚠ **换一个口径，符号就可能反过来** |
-| **L-7** | **迁移是"净额式"表述** ⇒ **总迁出恒为 0**（迁出分支是死代码） | ⚠ **无法表达人口流出 / 城市收缩** ⇒ "经济差 ⇒ 人口流失"**不存在** |
+| **L-1** | **The education–age structure is inverted vs. reality** — in the model, *younger ⇒ less educated*. Education is drawn from a district's **all-ages** table (lowest bracket ≈61.6%, mostly elderly). | ⚠ **"Education effect" and "age effect" are not separable** ⇒ any "education → marriage / fertility / income" result **may have the sign backwards** |
+| **L-5** | **Six caliber ambiguities** — e.g. the *total* fertility indicator `expBirthsY` has an **endogenous denominator** ⇒ **a more effective policy makes it fall** | ⚠ **Change the caliber and the sign can reverse** |
+| **L-7** | **Migration is expressed as a single net rate** ⇒ **gross emigration is identically zero** (the outflow branch is dead code) | ⚠ **Cannot express population outflow / urban shrinkage** — "bad economy ⇒ people leave" **does not exist** |
 
-### 🔴 会**让结论直接不成立**的两条
-
-```
-⚠️ L-6 · 出生【数量】由 ID hash 决定（wantKidsOf 只读 hashOf(id,991)）
-   ⇒ ⇒ ⭐ 所以【任何"政策影响生育水平"的结论都不成立】—— 模型只建了【节奏】✓
-   ⇒ 这条最容易被误用：你完全可以说"补贴提高了生育率" · 而那是错的。
-
-⚠️ L-6 · 没有真实对照
-   ⇒ ⇒ ⭐ "像不像上海"这个问题【目前无法回答】—— 我们只做了 1~2 个指标的对照计划
-   ⇒ 证据：REALITY_ANCHOR_PLAN.md（方案 · 未实施）
-```
-
-### 🟠 其他（**逐条都限制你能问的问题**）
+### 🔴 Two that make conclusions **invalid outright**
 
 ```
-· L-2 分区学历公式整体偏高（已修 · 有残留）
-· L-3 模型的「建学校」=「降低学位压力 ⇒ 鼓励生育」· 【不是】"提高人力资本"
-     ⇒ ⚠️ 所以不能把它读成"教育投入的人力资本回报"
-· L-4 财政约束【只对手动干预生效】（自动政策走的是旧账本 · 无门禁）
-     · 「市政破产」结构上不可能（只是"购买力闸门"）
-· L-6 无经济系统（收入是行政公式 · 无厂商/银行/工资市场）
-· L-6 无人口均衡（死者由 ID hash 造新人 ⇒ 人口轨迹不可解释）
-· L-6 转世延迟 = 10 年（测试值 · 设计值 20 年）
-· L-6 无技术增长（500 年是平线）
-· L-6 housingControl 只增不减 · 基建折旧是后来才加的
-· L-6 可归因性只到 L3 ⇒ 机制归因**只限直接链**
-· L-6 规模效应显著（2,500 人 tfr 1.456 vs 4 万人 0.875）⇒ ⭐ 小规模只可读方向 · 不可外推
+⚠️ L-6 · Birth COUNTS are decided by an ID hash (only TIMING is modeled)
+   ⇒ ⭐ Any claim of the form "policy X raised the fertility rate" is INVALID.
+   ⇒ This is the easiest one to misuse: you could say "the subsidy raised fertility" — and be wrong.
+
+⚠️ L-6 · No validation against reality
+   ⇒ ⭐ "Does it look like the real city?" CANNOT currently be answered.
+     We only have a plan to anchor 1–2 indicators. Evidence: REALITY_ANCHOR_PLAN.md (plan; not implemented).
 ```
 
-**完整清单** ⇒ [`LIMITATIONS.md`](LIMITATIONS.md)（L-1 ~ L-7 · 每条含现象/行号级根因/影响面/修法）
+### 🟠 Others (**each one constrains which questions you may ask**)
+
+```
+· L-2  District education formula is biased high overall (partially fixed; residual remains)
+· L-3  "Build schools" in the model means "lower schooling pressure ⇒ encourage births",
+       NOT "raise human capital" ⇒ do not read it as a human-capital return
+· L-4  The fiscal constraint applies ONLY to manual interventions; the "municipal bankruptcy"
+       state is structurally impossible (it is only a purchasing-power gate)
+· L-6  No economic system (income is an administrative formula; no firms/banks/wage market)
+· L-6  No demographic equilibrium (the dead are replaced by ID-hash new souls)
+· L-6  Reincarnation delay = 10 years (a test value; design value is 20)
+· L-6  No technical growth (500 years is a flat line)
+· L-6  housingControl is monotonically increasing; infrastructure depreciation was added late
+· L-6  Attributability only reaches L3 ⇒ mechanism attribution is limited to DIRECT chains
+· L-6  Strong scale effect (TFR 1.456 at 2,500 people vs 0.875 at 40,000)
+       ⇒ ⭐ small runs are DIRECTIONAL ONLY · not extrapolable
+```
+
+**Full list** ⇒ [`LIMITATIONS.md`](LIMITATIONS.md) (L-1 … L-7, each with symptom / line-level root cause / impact / fix direction)
 
 ---
 
-## 🔬 可复现性（**我们给的是指纹 · 不是"相信我们"**）
+## 🔬 Reproducibility (**we give fingerprints, not "trust us"**)
 
-> ⚠️ **"同一指纹 + 同参数 + 同种子 ⇒ `demog.csv` 逐字节相同"** —— 这是我们唯一敢做的复现承诺。
+> ⚠️ **"Same fingerprint + same parameters + same seed ⇒ byte-identical `demog.csv`"** —
+> that is the only reproducibility promise we make.
 
-**① 引擎指纹**（**SHA256 前 16 位 · 本仓库离线批次实测**）：
+**① Engine fingerprints** (SHA256, first 16 hex digits; **measured on the offline batches in this repo**):
 
-| 文件 | 指纹 |
+| File | Fingerprint |
 |---|---|
 | `js/citysim.js` | **`0269A820E07E0423`** |
 | `tools/_soul_test.cjs` | **`8E5C3E51E09AB5A9`** |
 | `gov_costs.json` | **`CDC90957250ADC70`** |
 
-⚠️ **注意**：这是**未发布的开发版**（8,985 行）—— 而**线上演示跑的是 `v1.2.0`（8,364 行）**。
-⇒ **两者不是同一个二进制**：**本仓库的离线数字来自开发版 · 演示页来自 `v1.2.0`**。
+⚠️ **Note**: these are an **unreleased development build** (8,985 lines) —
+while **the live demo runs `v1.2.0` (8,364 lines)**.
+⇒ **They are not the same binary**: the offline numbers in this repo come from the dev build,
+the demo page from `v1.2.0`.
 
-**② 数据来源批次**（本文档与配图引用的）：
+**② Data batches** referenced by this document and the charts:
 
-| 批次 | 规模 | 年数 | 用途 |
+| Batch | Scale | Years | Purpose |
 |---|---|---|---|
-| `govB_ctrl_sh` / `govB_treat_sh` | 2,500 → 23,006 / 22,685 人 | **200 年** | ⭐ **配图那两条曲线** |
-| `gov_ms_A2` | 2,500 人 · **10 种子 × 2 臂** | 20 年 | 第一个带 CI 的策略评估 |
-| `mem200k_sh` | **210,218 人** | 短期 | 规模上限 + 内存标定 |
-| `run500_sh` | **166,410 人** | **173 年** | 带完整逐年历史的最大批次 |
-| 线上服务 | **54 万+ 人** | **第 1456 天**（实时） | ⭐ **演示页** |
+| `govB_ctrl_sh` / `govB_treat_sh` | 2,500 → 23,006 / 22,685 | **200** | ⭐ the two chart curves |
+| `gov_ms_A2` | 2,500 · **10 seeds × 2 arms** | 20 | first policy evaluation with CIs |
+| `mem200k_sh` | **210,218** | short | scale ceiling + memory calibration |
+| `run500_sh` | **166,410** | **173** | largest batch with full yearly history |
+| live service | **500k+** | **day 1456** (real time) | ⭐ the demo page |
 
-**③ 关键参数**：`SOUL_LIFE_V2=all` · `CITY_GOV_INFRA_LIFE=40` · 快照起点 **day 730**
-· 种子 `(20250914 + k×2654435769) >>> 0` · 时间加速 **600:1**
+**③ Key parameters**: `SOUL_LIFE_V2=all` · `CITY_GOV_INFRA_LIFE=40` · snapshot origin **day 730**
+· seed `(20250914 + k×2654435769) >>> 0` · time scale **600:1**
 
-**④ 标定模型**（我们自己量过自己）：
+**④ Calibration models** (we measured ourselves):
 
 ```
-耗时 ≈ 13~14 ms / 人·年        （3 点标定 · 可预测已跑批次到 10% 以内）
-内存 ≈ 101 + 5.14 × √alive  MB  （7 点标定 · ±4% · 含台账项）
+time  ≈ 13–14 ms / person-year       (3-point fit; predicts completed batches to within ~10%)
+memory ≈ 101 + 5.14 × √alive  MB     (7-point fit; ±4%; includes the ledger term)
 ```
 
-⚠️ **标定覆盖范围**：**人口 ≤ 210,000 · 年数 ≤ 3**（内存）
-⇒ **超出这个范围的一律是外推** —— 这个模型**今天被我们自己的实测推翻了两次**（见 `SHANGHAI_SCALE_BUDGET.md`）。
+⚠️ **Calibration coverage**: **population ≤ 210,000 · years ≤ 3** (memory).
+⇒ **Anything outside this range is extrapolation** — and this model **was overturned twice in one day
+by our own new measurements** (see `SHANGHAI_SCALE_BUDGET.md`).
 
-**完整字段字典** ⇒ [`DATA_SPEC.md`](DATA_SPEC.md)
+**Full field dictionary** ⇒ [`DATA_SPEC.md`](DATA_SPEC.md)
 
 ---
 
-## 样例数据（**先看这个**）
+## Sample data (**start here**)
 
-[`SAMPLE_PACKAGE/`](SAMPLE_PACKAGE/) —— 7 个文件 · 877 KB：
+[`SAMPLE_PACKAGE/`](SAMPLE_PACKAGE/) — 7 files · 877 KB:
 
-| 文件 | 内容 |
+| File | Contents |
 |---|---|
-| `README.md` | 三句免责 + 四表粒度关系 + 复现参数 |
-| `sample_souls.csv` | 100 行 · 4 列（人格/结局） |
-| `sample_panel.csv` | 200 行 · 17 列（面板） |
-| `sample_lives.jsonl` | **20 条完整一生** |
-| `sample_demog.csv` | 72 列 × 200 年（年锚点） |
-| ⭐ `sample_queries.md` | **5 个"这套数据能回答什么问题"** · 每个带**置信度** |
-| `LICENSE_TODO.md` | 4 个许可选项 |
+| `README_ZH.md` | three disclaimers + table granularity + reproduction parameters |
+| `sample_souls.csv` | 100 rows · 4 cols (personality / outcome) |
+| `sample_panel.csv` | 200 rows · 17 cols (panel) |
+| `sample_lives.jsonl` | **20 complete lives** |
+| `sample_demog.csv` | 72 cols × 200 years (year anchors) |
+| ⭐ `sample_queries.md` | **5 "what can this data answer"** examples, each with a **confidence** |
+| `LICENSE_TODO.md` | 4 license options |
 
-**⚠️ 交付注意（我们踩过的坑，你别再踩）**：
+**⚠️ Delivery gotchas (we hit them so you don't have to)**:
 ```
-① demog.csv 的【列数随引擎版本变化】（29 / 57 / 70 / 72）⇒ 认列名 · 别认列数
-② panel500 实际是 .csv.gz（压缩的）
-③ souls500 的列名【含中文】⇒ 读取必须显式指定 UTF-8
-④ lives500 单条可达 ~30 KB（首条 events 431 条）⇒ 必须流式处理
+① demog.csv column count VARIES by engine version (29 / 57 / 70 / 72) ⇒ match by name, not by count
+② panel500 is actually .csv.gz (compressed)
+③ souls500 column names CONTAIN CHINESE ⇒ you must specify UTF-8 explicitly when reading
+④ a single lives500 record can reach ~30 KB (first record has 431 events) ⇒ stream it
 ```
 
-**5 分钟上手** ⇒ [`HOW_TO_USE.md`](HOW_TO_USE.md)
+**5-minute quickstart** ⇒ [`HOW_TO_USE.md`](HOW_TO_USE.md)
 
 ---
 
-## 常见质疑（**我们先把最难听的话说了**）
+## Common challenges (**we say the harshest thing first**)
 
-| 质疑 | 我们的回答 |
+| Challenge | Our answer |
 |---|---|
-| **"这不就是 ABM / 微观仿真吗？"** | ⚠️ **这是最需要我们回答的一条** —— 见 [`FAQ_REBUTTALS.md`](POSTS/FAQ_REBUTTALS.md) 第 1 条。**如果答不上，那就说明它确实不新。** |
-| **"怎么知道它像真的？"** | ⭐ **诚实答：没有系统验证。** 只有 1~2 个指标的对照计划（未实施）。 |
-| **"参数是不是拍的？"** | 部分是。有依据的与预设的**逐项标了三态**（官方 / 平台 / 模型假设）。 |
-| **"数据哪来的？抄的吗？"** | **凭空生成 · 不来自任何真实个体。** |
-| **"能预测未来吗？"** | ⭐ **不能。** 这是本页第三句。 |
-| **"有什么用？"** | 能做**真实世界做不到的对照实验**。 |
-| **"为什么不用 LLM？"** | LLM 能写出一份报告 · 但**说不出"是哪个机制导致的"**。 |
-| **"怎么证明不是过拟合？"** | 不能证明。**见 L-1/L-5/L-7** —— 三条都可能让方向反过来。 |
+| **"Isn't this just ABM / microsimulation?"** | ⚠️ **This is the one we most need to answer.** See [`POSTS/FAQ_REBUTTALS.md`](POSTS/FAQ_REBUTTALS.md) #1. **If we can't answer it, it isn't novel.** |
+| **"How do you know it's realistic?"** | ⭐ **Honest answer: there is no systematic validation.** Only a plan for 1–2 indicators (not implemented). |
+| **"Are the parameters made up?"** | Partly. Supported vs. assumed values are **individually tagged** (official / platform / modelling assumption). |
+| **"Where does the data come from? Scraped?"** | **Generated from nothing. Not from any real individual.** |
+| **"Can it predict the future?"** | ⭐ **No.** That is sentence three on this page. |
+| **"What is it good for?"** | Running the **controlled comparisons you cannot run in the real world**. |
+| **"Why not just use an LLM?"** | An LLM can write a report — but it **cannot tell you which mechanism caused it**. |
+| **"How do you know it isn't overfitted?"** | We can't. **See L-1 / L-5 / L-7** — three of them can flip the sign. |
 
 ---
 
-## 许可（**已定 · 简单说：文档随便用 · 引擎不开放**）
-
-| 对象 | 许可 | 一句话 |
-|---|---|---|
-| ⭐ **文档 · 样例数据 · 本仓库全部 `.md` 与 `SAMPLE_PACKAGE/`** | **`CC BY 4.0`** | ⭐ **欢迎引用 · 转载 · 用于研究 · 用于教学 · 用于商业原型 —— 只需署名** |
-| **引擎代码（`citysim.js` 等）· 仿真模型 · 完整人口数据** | **All rights reserved** | ⚠️ **不在本仓库内 · 保留所有权利** |
-| **完整数据 / 定制分析 / 商业授权** | **另行授权** | ⇒ 见下方「联系方式」 |
-
-> ⭐ **一句话**：**文档与样例数据以 [`CC BY 4.0`](https://creativecommons.org/licenses/by/4.0/) 授权 ——
-> 欢迎引用、转载、用于研究与教学，只需署名。**
-> ⚠️ **但它【不包含】引擎代码与完整数据** —— 那些保留所有权利。
-
-**为什么是 `CC BY` 而不是 `CC BY-NC`**：我们**要的是传播**。
-`NC`（非商业）会挡住**公司内部试用 · 教学 · 咨询公司做原型** —— 而**那正是我们最想接触的人**。
-`BY` 只要求**署名**，而**署名正是我们最想要的东西**（传播的痕迹）。
-⇒ 商业化保护**不靠许可**，靠 ① 引擎闭源 ② 样例数据只有几千行 ③ 定制服务。
-
----
-
-## 想合作 / 想用完整数据
+## Collaboration / using this data
 
 ```
-✅ 已定（不用你填）：
-   · 仓库 URL：https://github.com/sevnwu/virtual-city
-   · 演示地址：https://www.faceabc.com/city/index.html   ← ✅ 实测 HTTP 200
-   · 许可：文档/样例 = CC BY 4.0 · 引擎/完整数据 = 保留所有权利
+✅ Already set:
+   · Repo:  https://github.com/sevnwu/virtual-city
+   · Demo:  https://www.faceabc.com/city/index.html   (⚠️ UI is in Chinese)
 
-✅ 联系方式（已定）：
-   · 邮箱：**wudonghai@126.com**
-   · 是否接受合作 / 数据申请：**是** —— 欢迎直接发邮件
+✅ Contact (set):
+   · Email: **wudonghai@126.com**
+   · Collaboration / data requests: **Yes** — just send an email
 ```
 
-> ⭐ **想用完整数据、想做定制分析、或想谈商业授权** ⇒ **直接发邮件到 `wudonghai@126.com`**，
-> 说清**用途**与**规模**即可。**学术与教学用途优先。**
+> ⭐ **Full data, custom analysis, or commercial licensing** ⇒ **email `wudonghai@126.com`**
+> with a one-line description of **what you want to do** and **at what scale**.
+> **Academic and teaching uses are prioritised.**
 
-**当前状态**：✅ **文档与样例数据【已可自由使用】**（CC BY 4.0 · 署名即可）。
-⚠️ **完整数据与商业授权【尚未开放】** —— 定价与署名仍在定（见 `SAMPLE_PACKAGE/LICENSE_TODO.md`）。
+**Current status**: ✅ **Docs and sample data are free to use now** (CC BY 4.0 — attribution only).
+⚠️ **Full data and commercial licensing are not open yet** — pricing and attribution are still being decided
+(see `SAMPLE_PACKAGE/LICENSE_TODO.md`).
 
 ---
 
-## 引用
+## Citation
 
 ```bibtex
 @misc{virtualcity2026,
@@ -265,5 +242,5 @@
 }
 ```
 
-**⚠️ 引用时请务必带上 `note` 那一行** —— 它和本页开头三句是同一件事。
-**⭐ 而 `license` 那一行也请保留** —— 它告诉读者**这套数据可以被怎么用**。
+**⚠️ Please always include the `note` line when citing** — it is the same thing as the three sentences at the top.
+**⭐ Please keep the `license` line too** — it tells readers how this data may be used.

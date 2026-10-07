@@ -45,7 +45,7 @@ migIn / migOut = 5 / 0        ← ⚠️ 这一行就是 L-7（迁出恒为 0）
 | `sample_lives.jsonl` | **一生**（事件流） | 20 条 |
 | `sample_demog.csv` | **城市-年**（年锚点） | 200 × 72 |
 | `sample_queries.md` | ⭐ **能回答什么问题** | 5 个例子 |
-| `README.md` · `LICENSE_TODO.md` | 说明 | — |
+| `README_ZH.md` · `LICENSE_TODO.md` | 说明 | — |
 
 ## 2. 读它（**四个坑别踩**）
 

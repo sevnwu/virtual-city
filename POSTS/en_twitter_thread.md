@@ -97,7 +97,7 @@ It is running right now, 24/7 — you can watch it:
 
 https://www.faceabc.com/city/index.html
 
-⚠️ One caveat: the demo UI is in Chinese. An English one-pager is in the repo (README_EN.md).
+⚠️ One caveat: the demo UI is in Chinese. An English one-pager is in the repo (README.md).
 ```
 
 **10/10**

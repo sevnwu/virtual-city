@@ -1,5 +1,8 @@
 # ⚠️ 需要你填的东西（TODO FOR OWNER）
 
+> ⚠️ **文件已改名（2026-10-07）**：仓库首页现为**英文版** README.md；**中文版**移至 README_ZH.md。本文中凡提到 README.md 处，若指中文内容请按 README_ZH.md 理解。
+
+
 > **这是唯一挡在"能发出去"前面的东西。**
 > **原 9 项**（4 决策 + 5 填空）→ ⭐ **现 12 项**（新增 ⑩ 演示地址 · ⑪ 版本号 · ⑫ 日期）。
 > **进度**：**⑤ 落地页 URL · ⑦ 仓库名 · ⑩ 演示地址候选 · ⑪ 版本号** —— ✅ **已由我代填**
@@ -20,7 +23,7 @@
 `BY` 只要求**署名** —— 而**署名正是我们最想要的**（传播的痕迹）。
 ⇒ ⭐ **商业化保护不靠许可** ⇒ 靠 ① 引擎闭源 ② 样例数据只有几千行 ③ 定制服务。
 
-**⇒ 已写入**：`README.md`（新增「许可」一节）· `README_EN.md`（`License` 行）· 两处 BibTeX 的 `license` 字段 ✓
+**⇒ 已写入**：`README.md`（新增「许可」一节）· `README.md`（`License` 行）· 两处 BibTeX 的 `license` 字段 ✓
 
 ---
 
@@ -33,7 +36,7 @@
    ⇒ 同时影响【法律风险】与【学术可信度】
 ```
 
-> **③ 署名**：⚠️ **暂用 GitHub 名 `sevnwu`**（已填进 `README.md` / `README_EN.md` / `DATA_SPEC.md` 的 BibTeX）
+> **③ 署名**：⚠️ **暂用 GitHub 名 `sevnwu`**（已填进 `README.md` / `README.md` / `DATA_SPEC.md` 的 BibTeX）
 > ⇒ ⭐ **你可以随时改成真名或机构名** —— 只改三个 `.md` 里的 `author = {sevnwu}` 一处即可。
 > ⇒ ⚠️ **正式投稿/发布前建议改掉**（学术引用需要可核实的作者名）。
 
@@ -44,9 +47,9 @@
 | # | 填什么 | 出现在哪里 | 状态 |
 |---|---|---|---|
 | **⑤** | **落地页 URL** | 全部 6 篇帖子 + `README.md` | ⭐ **已填**：`https://github.com/sevnwu/virtual-city` |
-| **⑥** | **联系方式** | `README.md` 末尾 · `README_EN.md` · 帖子末尾 | ✅ **已填**：`wudonghai@126.com` |
+| **⑥** | **联系方式** | `README.md` 末尾 · `README.md` · 帖子末尾 | ✅ **已填**：`wudonghai@126.com` |
 | **⑦** | **GitHub 仓库名** | `README.md` 的徽章与链接 | ⭐ **已填**：`sevnwu/virtual-city` |
-| **⑧** | **BibTeX 的 `author`** | `README.md` / `README_EN.md` / `DATA_SPEC.md` | ⭐ **已暂填** `sevnwu`（**可改** · 见上） |
+| **⑧** | **BibTeX 的 `author`** | `README.md` / `README.md` / `DATA_SPEC.md` | ⭐ **已暂填** `sevnwu`（**可改** · 见上） |
 | **⑨** | **是否接受"数据申请"** | `README.md` 末节 | ✅ **已填**：**是**（欢迎发邮件） |
 
 **⇒ 最快的顺序**：
@@ -149,15 +152,15 @@ timeScale = 600:1
 ```
 ⚠️ 起因：6 篇帖子里有 3 篇是英文（HN / Reddit / X），而【演示页界面全是中文】
    ⇒ 英文读者点进去 ⇒ 看不懂 ⇒ 直接关掉 ❗
-⇒ ✅ 已做的缓解：新建 `README_EN.md`（英文一页纸）· 3 篇英文帖子各加了
-   "⚠️ the demo UI is in Chinese" 的诚实提示 + 指向 `README_EN.md` ✓
+⇒ ✅ 已做的缓解：新建 `README.md`（英文一页纸）· 3 篇英文帖子各加了
+   "⚠️ the demo UI is in Chinese" 的诚实提示 + 指向 `README.md` ✓
 ```
 
 ### ⑬ ⭐⭐ **演示页要不要做英文版？**（三选一）
 
 | 选项 | 成本 | 效果 |
 |---|---|---|
-| **(a) 不做 · 只靠 `README_EN.md`**（**当前状态**） | 0 | ⚠️ 英文读者**只能看文档 · 看不到活的城** |
+| **(a) 不做 · 只靠 `README.md`**（**当前状态**） | 0 | ⚠️ 英文读者**只能看文档 · 看不到活的城** |
 | **(b) 给演示页加一层"英文标签"** | 小（**改几个按钮/字段名**） | ⭐ **性价比最高** —— 不需要全站 i18n |
 | **(c) 做完整 i18n** | 大 | 效果最好 · 但**要动线上代码** ⇒ 需另排 |
 
@@ -168,7 +171,7 @@ timeScale = 600:1
 ### ⑭ **英文文档要不要扩展？**
 
 ```
-现状：`README_EN.md` = **英文一页纸**（含三句免责 / 能力表 / L-1~L-7 摘要 / 可复现性 / 引用块）
+现状：`README.md` = **英文一页纸**（含三句免责 / 能力表 / L-1~L-7 摘要 / 可复现性 / 引用块）
 ⚠️ 而未英译的：`LIMITATIONS.md`（完整版）· `DATA_SPEC.md`（字段字典）· `HOW_TO_USE.md` · `FAQ_REBUTTALS.md`
 ⇒ ⭐ **建议优先级**：
    ① **`LIMITATIONS.md`（完整版）** —— ⭐ **因为英文读者最会去查"你限制了啥"** ✓
@@ -180,7 +183,7 @@ timeScale = 600:1
 
 ```
 ✅ 已填 **`wudonghai@126.com`**（邮箱 · 对英文读者最友好 —— 比微信好）✓
-   出现位置：`README.md` 末节 · `README_EN.md`（License 表 + Collaboration 节）·
+   出现位置：`README.md` 末节 · `README.md`（License 表 + Collaboration 节）·
              3 篇英文帖子（`en_hackernews` / `en_reddit` / `en_twitter_thread`）
 ⇒ ⚠️ **若以后想改成别的** ⇒ 全仓库搜 `wudonghai@126.com` 一次性替换即可 ✓
 ```
@@ -235,7 +238,7 @@ timeScale = 600:1
 □ ⭐ 版本号已确认（⑪）—— 当前写的是"线上 v1.2.0 + 开发版指纹"
 □ 日期已改（⑫ —— 现在是 2026-10-07，发帖前改成实际发布日）
 □ 6 篇帖子的 `TODO: URL` 已全部替换（⑤）
-□ 联系方式已填（README + README_EN + 帖子）（⑥）—— ✅ **`wudonghai@126.com`**
+□ 联系方式已填（README + README + 帖子）（⑥）—— ✅ **`wudonghai@126.com`**
 □ BibTeX author 已填（⑧）—— ⭐ **暂用 `sevnwu` · 正式发布前建议改真名**
 □ ⚠️ **发帖前请再看一眼 `/city/api/state` 的最新人口与天数**（帖子里有具体数字）
 □ 三句免责在【每一篇】里都有

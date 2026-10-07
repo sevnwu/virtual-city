@@ -102,7 +102,7 @@ with per-answer confidence): **https://github.com/sevnwu/virtual-city**
 
 Live demo (it is running right now): https://www.faceabc.com/city/index.html
 ⚠️ **The demo UI is in Chinese** — this post is the English write-up. There is also an
-English one-pager in the repo: `README_EN.md`.
+English one-pager in the repo: `README.md`.
 **License**: docs & sample data are **CC BY 4.0** — cite, reuse, research, teaching and
 commercial prototyping, attribution only. The **engine source and full data are proprietary**;
 commercial licensing is available separately.
