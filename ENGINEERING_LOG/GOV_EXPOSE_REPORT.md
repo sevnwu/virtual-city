@@ -105,7 +105,7 @@ aqi = 0.11048941001177083 · powerLoad = 0.741091745095152 · crime = 0.05798732
 ```
 ⇒ **`subway=3` / `green=2` 保住了**（这是 `CITY_POP_SCALE=43.9` 生效的关键判据）。
 
-**探针**：`/home/ecs-user/app/city_engine/data/gov_probe.jsonl` · 启动 60s 后开始写 · 261 B/行
+**探针**：`<服务器引擎目录>/data/gov_probe.jsonl` · 启动 60s 后开始写 · 261 B/行
 
 **环境变量的权威复核**（三条独立证据，互相印证）：
 
@@ -189,11 +189,11 @@ aqi      0.1105 → 0.0807                                  ← 随天气/季节
 sudo -n sed -i '/CITY_GOV_EXPOSE=1/d' /etc/systemd/system/city-engine.service.d/gov.conf
 sudo -n systemctl daemon-reload && sudo -n systemctl restart city-engine
 # 连代码一起回
-cp -a /home/ecs-user/_bak_expose_20261008_123948/city_server.before_expose.js \
-      /home/ecs-user/app/city_engine/city_server.js
+cp -a <服务器备份目录>/_bak_expose_20261008_123948/city_server.before_expose.js \
+      <服务器引擎目录>/city_server.js
 sudo -n systemctl restart city-engine
 ```
-**备份**：`/home/ecs-user/_bak_expose_20261008_123948/`（含 `SHA_BEFORE.txt` = `4dc49b4c9c449ff8`）
+**备份**：`<服务器备份目录>/_bak_expose_20261008_123948/`（含 `SHA_BEFORE.txt` = `4dc49b4c9c449ff8`）
 
 ---
 

@@ -79,7 +79,7 @@
 
 | 步骤 | 动作 | 结果 |
 |---|---|---|
-| **STEP 0** | 采集基准 + 备份（8 文件） | ✅ `/home/ecs-user/_bak_step1_v130_20261008_111124` |
+| **STEP 0** | 采集基准 + 备份（8 文件） | ✅ `<服务器备份目录>/_bak_step1_v130_20261008_111124` |
 | **STEP 1** | 推代码（`citysim` `81BAA4CF` / `gov_costs` `F73DA0DE` / `versions.html` `900311BA`）| ✅ 见下 |
 | **STEP 2a** | 装桥 + 10 开关（**不含 GREEN_GATE**）+ 重启 | ✅ 见下 |
 | **STEP 2b** | 追加 `GREEN_GATE=1` + 重启 | ✅ 见下 |
@@ -194,12 +194,12 @@
 ## 八、回滚材料（**两个目录都请勿删**）
 
 ```
-① `/home/ecs-user/_bak_before_v130_20261008_105831`（6 文件 · 含 `city_state.bin` 103.6 MB）
-② `/home/ecs-user/_bak_step1_v130_20261008_111124`（8 文件）
+① `<服务器备份目录>/_bak_before_v130_20261008_105831`（6 文件 · 含 `city_state.bin` 103.6 MB）
+② `<服务器备份目录>/_bak_step1_v130_20261008_111124`（8 文件）
    · `citysim.before_step1.js`(0269a820) · `gov_costs.before_step1.json`(cdc90957)
    · `city_server.before_step1.js`(3e4c5374) · `versions.before_step1.html`(1b726a29)
    · `city-engine.service.before_step1` · `limits.conf.before_step1` · `baseline_api_state.json`
-③ `/home/ecs-user/_bak_step2a_v130_20261008_111920` · `_bak_step2b_v130_20261008_112516`
+③ `<服务器备份目录>/_bak_step2a_v130_20261008_111920` · `_bak_step2b_v130_20261008_112516`
    （含 `gov.conf` 前一版）
 ```
 
@@ -209,10 +209,10 @@
 sudo rm -f /etc/systemd/system/city-engine.service.d/gov.conf
 sudo systemctl daemon-reload && sudo systemctl restart city-engine
 # 2) 连代码一起回滚
-cp <bak>/citysim.before_step1.js   /home/ecs-user/app/city_engine/js/citysim.js
-cp <bak>/gov_costs.before_step1.json /home/ecs-user/app/city_engine/gov_costs.json
-cp <bak>/city_server.before_step1.js /home/ecs-user/app/city_engine/city_server.js
-cp <bak>/versions.before_step1.html  /home/ecs-user/app/marriage/public/city/versions.html
+cp <bak>/citysim.before_step1.js   <服务器引擎目录>/js/citysim.js
+cp <bak>/gov_costs.before_step1.json <服务器引擎目录>/gov_costs.json
+cp <bak>/city_server.before_step1.js <服务器引擎目录>/city_server.js
+cp <bak>/versions.before_step1.html  <服务器站点目录>/versions.html
 sudo systemctl restart city-engine
 ```
 

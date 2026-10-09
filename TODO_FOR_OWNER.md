@@ -90,7 +90,7 @@ timeScale = 600:1
      · `robots.txt`：**删除 `Disallow: /city/index.html`**（其余 5 条保留）
      · ⭐ **`sh.html` 顶部新增【英文说明条】**（可关闭 · 含 "synthetic data · not for prediction" + GitHub 链接）
    ⇒ ✅ **公网已复验**：`/city/sh.html` 200 · robots meta 已是新值 · `/api/state` 正常 · 服务未重启
-   ⇒ 🔴 **回滚**：`cp -p /home/ecs-user/_bak_city_enbar_20261007_151339/* …`（见该目录）
+   ⇒ 🔴 **回滚**：`cp -p <服务器备份目录>/_bak_city_enbar_20261007_151339/* …`（见该目录）
 
 🔴 **② 访问量 —— ⚠️ 仍未解决**
    ⇒ 若帖子火了（HN 首页量级）⇒ 大量并发访问 `/api/state`
