@@ -33,13 +33,18 @@
 ### 指纹（**以实测为准**）
 
 ```
-js\citysim.js        = **268A382C4964F488**（2026-10-07 羁押修复后 · 原 0269A820E07E0423）
-tools\_soul_test.cjs = **6FC3E6A6A5089138**（2026-10-07 注释更新后 · 原 8E5C3E51E09AB5A9）
-gov_costs.json       = **CDC90957250ADC70**（第 3/4 项改后 · 原 BB33892399344131）
-city_server.js       = **3E4C5374E1E08AED**（**未动 · 本地 == 线上**）
-判据 A 基线          = **FFA2359404C66485**（1,000 人 × 3 年 · `SOUL_LIFE_V2=all`）
-                         （⚠ 旧值 `083FE5423AA5D9C8` 已失效 · 2026-10-07 羁押修复）
-线上引擎             = **a1094cfdb493ad0f**（**未部署最新改动**）
+⚠⚠ **本块已于 2026-10-09 重写** —— 上一版是 2026-10-07 的值，**四项全变**。
+   权威指纹表见 `civilization\HANDOFF_20261009.md` §二（全部实测）。
+
+js\citysim.js        = **D7B8C0E58D02F1A8**（2026-10-09 · 含名字性别 + 里程碑 + famFlag + eduPref/D + 学历硬门槛）
+tools\_soul_test.cjs = **8A3AD9BE9C947D60**
+gov_costs.json       = **F73DA0DEB360B8C9**
+city_server.js       = **0F62195252454C2F**
+js\citydata_sh.js    = **48B9EA7702025AAB**（⭐ 线上职业份额的【生效位置】）
+tools\citydata_sh.mjs= **58C554FAEC37C2F7**（⭐ harness 的【生效位置】）
+判据 A 基线          = **F3B300F6D12F531F**（1,000 人 × 3 年 · `SOUL_LIFE_V2=all` · 2026-10-09 实测）
+                         （⚠ 已失效：`FFA2359404C66485` · `B16714EEBBCCCADC` · `AD25CE6887218AB8`）
+线上引擎             = **d7b8c0e58d02f1a8**（2026-10-09 部署任务实测 · ⚠ 本次未复测）
 ```
 
 ### ✅ 今天已完成（**全部已验证**）
@@ -228,7 +233,8 @@ city_server.js       = **3E4C5374E1E08AED**（**未动 · 本地 == 线上**）
 ```
 备份：`D:\civ_soul_data\_edit_backups\gov_costs.before_caliber_20261006_212245.json`
    ⇒ SHA16 = **`BB33892399344131`**（= 改前原值 · 可证有效）
-回滚：拷回 `civilization\gov_costs.json` ⇒ 复跑判据 A 应得 `FFA2359404C66485`
+回滚：拷回 `civilization\gov_costs.json` ⇒ 复跑判据 A 应得**当时的**基线 `FFA2359404C66485`
+      （⚠ **该值是【历史记录】· 已于 2026-10-09 失效** ⇒ 现应为 `F3B300F6D12F531F` · 见 `GOVERNMENT_ROADMAP.md` §三/§五）
 ```
 
 
