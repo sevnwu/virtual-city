@@ -16,7 +16,7 @@
 Hi HN,
 
 For the last few months I've been running a **behavioral virtual city** on a single server.
-It's currently at **day 1456**, with **539,742 simulated people** — each one has a name, a
+It's currently at **day 5400 (≈14.8 virtual years)**, with **588,282 simulated people** — each one has a name, a
 family, a Big-Five personality profile, an education history, a job, an income, a
 relationship history, a fertility history, and a **year-by-year life trajectory**.
 
@@ -29,10 +29,12 @@ and the population-level numbers **emerge** from individual behavior.
 
 > **⚠️ Three different numbers — please don't conflate them:**
 >
-> 1. **The live city** (above): **539k individuals**, currently **day 1456**, running in real time.
+> 1. **The live city** (above): **588k individuals**, currently **day 5400 (≈14.8 virtual years)**, running in real time.
+>    ⚠️ **"14.8 virtual years" ≠ "running for 14.8 years"**: the live instance runs at a
+>    **600:1** time scale (1 real second = 10 virtual minutes) ⇒ 5400 virtual days ≈ **9.0 real days**.
 > 2. **The two runs behind the charts I'll link**: **2,500 individuals → 23,006 after 200 years.**
 >    A 200-year horizon forces a small starting population — the time budget is linear in
->    (people × years), so a 539k × 200-year run would take ~9 days per arm on this machine.
+>    (people × years), so a 588k × 200-year run would take ~10 days per arm on this machine.
 > 3. **Largest I've actually run**: **210k individuals**; the largest *with full year-by-year
 >    history* is **166k × 173 years**.
 >

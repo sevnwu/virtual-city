@@ -19,7 +19,7 @@ I've been running a behavioral virtual city for 1000+ days (540k individuals). H
 
 **Body:**
 
-I've been building a **behavioral virtual city** — currently **day 1456**, **539,742 simulated
+I've been building a **behavioral virtual city** — currently **day 5400 (≈14.8 virtual years)**, **588,282 simulated
 individuals**, each with a name, family, Big-Five profile, education, job, income, relationship
 history, fertility history, and a year-by-year life trajectory.
 
@@ -30,10 +30,12 @@ Not an age-structured cohort model. Every individual is simulated; population nu
 > ⚠️ **Caveat: the demo UI is in Chinese** (this post is the English write-up).
 
 > **⚠️ Three scale numbers — please don't conflate them:**
-> - **Live city**: **539k individuals**, **day 1456**, running in real time.
+> - **Live city**: **588k individuals**, **day 5400 (≈14.8 virtual years)**, running in real time.
+>   ⚠️ **"14.8 virtual years" ≠ "running for 14.8 years"**: the live instance runs at a
+>   **600:1** time scale ⇒ 5400 virtual days ≈ **9.0 real days**.
 > - **The two runs behind my charts**: **2,500 → 23,006 over 200 years.** A 200-year horizon
->   forces a small start — time cost is linear in (people × years), so 539k × 200 years would
->   be ~9 days per arm on this machine.
+>   forces a small start — time cost is linear in (people × years), so 588k × 200 years would
+>   be ~10 days per arm on this machine.
 > - **Largest actually run**: **210k**; largest *with full year-by-year history*: **166k × 173 years**.
 >
 > A chart showing ~23k isn't an understatement — it's that **"long horizon" and "large scale"

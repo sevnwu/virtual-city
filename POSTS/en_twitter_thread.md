@@ -15,9 +15,9 @@
 
 **1/10**
 ```
-I've been running a virtual city on one server for 1000+ days.
+My virtual city is at day 5400 (14.8 virtual years ≈ 9 real days at 600:1).
 
-539,742 simulated people. Each has a name, a family, a personality, a job, and a year-by-year life trajectory.
+588,282 simulated people. Each has a name, a family, a personality, a job, and a year-by-year life trajectory.
 
 I built it to run experiments you can't run on real people.
 ```
