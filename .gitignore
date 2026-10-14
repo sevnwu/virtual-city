@@ -1,0 +1,9 @@
+﻿# 临时/中间产物（2026-10-14 加）
+# 起因：提交信息文件曾被 `git add -A` 误提交进提交 fc4fd2e，已用 --amend 修掉。
+# 规则：写提交信息请用 `.git/COMMIT_EDITMSG` 或仓库外的路径，不要放在工作树里。
+*.tmp
+*.bak
+*.bak_*
+*.orig
+*~
+_restore_me.js
