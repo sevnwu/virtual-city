@@ -1,6 +1,6 @@
 # A Behavioral Virtual City
 
-> 🌐 **中文版** ⇒ [`README_ZH.md`](README_ZH.md) · **Version `v1.2.0` (live) · 2026-10-07**
+> 🌐 **中文版** ⇒ [`README_ZH.md`](README_ZH.md) · **Version `v1.5.2` (live) · 2026-10-14**
 
 | | |
 |---|---|
@@ -24,7 +24,10 @@
 
 ## What it is
 
-**A virtual city running continuously on a server for 4 years (1456 days).** It contains **500,000+ simulated
+**A virtual city running continuously on a server** — as of 2026-10-14 it has lived through
+**14.3 virtual years** (day 5227) in about **8.7 real days** at a 600:1 time scale
+(1 real second = 10 virtual minutes; 1 virtual day = 144 real seconds).
+It contains **500,000+ simulated
 individuals** — each with a **name, sex, birth, family, Big-Five personality (O/C/E/A/N), education,
 occupation, income, relationship history, fertility history**, and a **year-by-year life trajectory**.
 
@@ -129,14 +132,15 @@ outcomes emerge from individual behavior**.
 
 | File | Fingerprint |
 |---|---|
-| `js/citysim.js` | **`0269A820E07E0423`** |
-| `tools/_soul_test.cjs` | **`8E5C3E51E09AB5A9`** |
-| `gov_costs.json` | **`CDC90957250ADC70`** |
+| `js/citysim.js` | **`7806854C3D29395F`** |
+| `tools/_soul_test.cjs` | **`968A6E944D656D92`** |
+| `gov_costs.json` | **`F73DA0DEB360B8C9`** |
 
-⚠️ **Note**: these are an **unreleased development build** (8,985 lines) —
-while **the live demo runs `v1.2.0` (8,364 lines)**.
-⇒ **They are not the same binary**: the offline numbers in this repo come from the dev build,
-the demo page from `v1.2.0`.
+⚠️ **Note**: the fingerprints above are the **current live engine** —
+**the live demo runs `v1.5.2` (12,819 lines)**.
+The offline batches quoted in this repo were produced by **earlier engine builds**
+(their fingerprints are recorded in `ENGINEERING_LOG/`), so
+**offline numbers and the live demo are not the same binary** — compare trends, not absolute levels.
 
 **② Data batches** referenced by this document and the charts:
 
@@ -146,7 +150,7 @@ the demo page from `v1.2.0`.
 | `gov_ms_A2` | 2,500 · **10 seeds × 2 arms** | 20 | first policy evaluation with CIs |
 | `mem200k_sh` | **210,218** | short | scale ceiling + memory calibration |
 | `run500_sh` | **166,410** | **173** | largest batch with full yearly history |
-| live service | **500k+** | **day 1456** (real time) | ⭐ the demo page |
+| live service | **587,000+** | **day 5227 = 14.3 virtual years** | ⭐ the demo page (≈8.7 real days at 600:1) |
 
 **③ Key parameters**: `SOUL_LIFE_V2=all` · `CITY_GOV_INFRA_LIFE=40` · snapshot origin **day 730**
 · seed `(20250914 + k×2654435769) >>> 0` · time scale **600:1**
