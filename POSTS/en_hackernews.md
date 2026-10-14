@@ -1,4 +1,4 @@
-# Show HN: A virtual city of 540k people that has been running for 1000+ days
+# Show HN: A virtual city of 588k people, 14.8 virtual years old (~9 real days at 600:1)
 
 **⚠️ 发帖前必读（不是正文 · 发的时候删掉）**
 ```
@@ -119,10 +119,13 @@ and **counterfactual hygiene** — and I'd like to be told where that's still na
 
 ## 备选标题（**HN 只看标题** · 挑一个）
 ```
-① Show HN: A virtual city of 540k people that has been running for 1000+ days
+① Show HN: A virtual city of 588k people, 14.8 virtual years old (~9 real days at 600:1)
 ② Show HN: I built a virtual city, then found my own model was backwards
-③ Show HN: Counterfactual policy simulation with 540k synthetic individuals
+③ Show HN: Counterfactual policy simulation with 588k synthetic individuals
 ```
+⚠️ **标题里不要写"running for N days/years"**：线上 `day` 是**虚拟日**（600:1），
+   写成"跑了 1000+ 天"会让读者以为真实运行了 3 年 —— 而实际约 **9.0 真实天**。
+   要写就写清口径（如上①），或干脆不提运行时长。
 ⭐ **建议 ①**（"能看懂的画面"）· ⚠ **不要用 ②**（**自我揭短放正文里，别放标题** ——
    标题走"画面"，正文走"揭短"）✓
 

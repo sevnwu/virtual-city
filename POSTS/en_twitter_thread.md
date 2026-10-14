@@ -104,7 +104,7 @@ https://www.faceabc.com/city/index.html
 ```
 One scale caveat, since the chart may confuse:
 
-The two runs behind my charts are 2,500 → 23,006 over 200 years. A 200-year horizon forces a small start — 539k × 200y would be ~9 days per arm.
+The two runs behind my charts are 2,500 → 23,006 over 200 years. A 200-year horizon forces a small start — 588k × 200y would be ~10 days per arm.
 
 "Large scale" and "long horizon" can't both be had yet.
 ```

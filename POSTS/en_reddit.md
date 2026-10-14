@@ -14,7 +14,7 @@
 
 **Title:**
 ```
-I've been running a behavioral virtual city for 1000+ days (540k individuals). Here's what broke.
+I've been running a behavioral virtual city: 588k individuals, 14.8 virtual years (~9 real days at 600:1). Here's what broke.
 ```
 
 **Body:**
