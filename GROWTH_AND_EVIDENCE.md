@@ -67,6 +67,15 @@ node tools/_run_educont_validation.cjs 5000 50 educont_v1   # 5,000 人 × 50 �
 ```
 产出逐年 CSV + 判据表。**任何人都能跑**（约 25 分钟），结果与我们报的一致或我们错。
 
+### 判据 D（政策沙盘的差异置信区间）
+```
+node tools/_prep_multiseed_work.cjs <批次>        # 路径适配 + SHA 逐位核对（证明数据没被改动）
+node tools/_multiseed_report.cjs "H:\civ_soul_data\_reports\<批次>" --no-alias
+```
+**8 个批次 · 每批 16 指标 · 跨种子 95% CI** 的汇总见
+[`POLICY_CI_SUMMARY.md`](POLICY_CI_SUMMARY.md) —— 含 3 个**零干预阴性对照**批
+（其中 1 个出现的"显著"我们已核实为**假阳性并如实标注**，不得当效应引用）。
+
 ---
 
 ## 四、⭐ 第二条：我们把**自己犯的错**写进记录（不删）
